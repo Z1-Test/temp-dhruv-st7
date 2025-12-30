@@ -349,10 +349,10 @@ billing/
 ```
 
 **Source of truth:**
-- Use **only** the bounded contexts as written in `docs/product/roadmap.md`.
-- If a feature lists multiple bounded contexts, treat the **first context listed** as the **primary** context for folder placement under:
+* Use **only** the bounded contexts as written in `docs/product/roadmap.md`.
+* If a feature lists multiple bounded contexts, treat the **first context listed** as the **primary** context for folder placement under:
   `docs/features/<bounded-context>/`
-- Cloud agents MUST NOT infer new contexts, rename contexts, or re-order contexts.
+* Cloud agents MUST NOT infer new contexts, rename contexts, or re-order contexts.
 
 ---
 
@@ -406,23 +406,22 @@ The execution flow document MUST:
 
 ---
 
-#### Execution Ordering (DOCUMENTED ONLY)
+## 🔒 Authoritative Execution Plan
 
-Ordering MUST appear **only in this issue body**.
+```execution-plan
+Epic: Foundation Layer
+  - Feature A
+  - Feature B
+  - Feature C
 
-Example:
+Epic: Core Layer
+  - Feature D (depends on Feature A)
+  - Feature E (depends on Feature B, Feature C)
 
+Epic: Expansion Layer
+  - Feature F
+  - Feature G
 ```
-Execution Order:
-1. Feature A
-2. Feature E
-3. Feature B (depends on A, E)
-4. Feature C (depends on A, E, B)
-```
-
-Parallelism must be stated explicitly.
-
----
 
 #### Prohibitions (EXPLICIT)
 
