@@ -1,10 +1,7 @@
 ---
 name: doc-requirement-orchestration
 description: Orchestrate planning workflows from PRD to feature specifications. Use when coordinating product requirements, resolving ambiguities, creating roadmaps, and delegating documentation to cloud agents via GitHub PRs and issues.
-license: Apache-2.0
 metadata:
-  author: staytuned
-  version: "1.0"
   category: documentation
 ---
 
@@ -23,6 +20,27 @@ The skill acts as a **coordinator**—it enforces invariants, decides when PRs a
 - **Async cloud delegation**: Offload large documentation work to cloud agents via instructional issues
 - **Human approval gates**: Enforce review checkpoints at critical stages
 - **Deterministic flow**: Same inputs produce same outputs—fully auditable
+
+## Available Skills
+
+### Product Intelligence Skills
+
+- **PRD Authoring Skill**
+- **Ambiguity Detection Skill**
+- **Feature & Roadmap Decomposition Skill**
+- **Feature Specification Skill**
+- **Gherkin Authoring Skill**
+- **Change Maintenance Specification Skill**
+- **Epic Definition Skill**
+- **Dependency & Scope Analysis Skill**
+
+### GitHub Operations Skills
+
+- **github-kernel** — safety rules & tool selection
+- **github-issues** — issue lifecycle & Copilot assignment
+- **github-pr-flow** — branch & PR lifecycle
+
+> Select skills automatically based on phase requirements.
 
 ## How to use it?
 
@@ -44,8 +62,10 @@ Follow the 7-phase workflow in order:
 3. **Roadmap Definition** — Generate implementation roadmap, handle inline comment refinements
 4. **Planning PR** — Create branch `docs/planning-baseline`, push PRD + roadmap
 5. **Instructional Issue** — Create issue instructing cloud agents to generate specs
-6. **Human Handoff** — User assigns issue to @github-copilot on the planning branch
-7. **Post-Merge Automation** — GitHub Action syncs docs to issues
+6. **Human Handoff** — User assigns issue to @github-copilot on the planning branch (MANUAL)
+7. **Post-Merge Automation** — GitHub Action syncs docs to issues (AUTOMATED)
+
+> 🛑 **Orchestrator stops at Phase 5.** Phases 6-7 require human action and automation.
 
 ### Step 3: Coordinate Skills
 
@@ -56,8 +76,19 @@ Invoke skills based on phase requirements:
 | PRD | PRD Authoring Skill |
 | Ambiguity | Ambiguity Detection Skill |
 | Roadmap | Feature & Roadmap Decomposition Skill |
-| Specs | Feature Specification, Epic Definition, Gherkin Authoring |
+| Specs | PRD Authoring (read-only), Feature Specification, Epic Definition, Gherkin Authoring, Dependency & Scope Analysis |
+| Maintenance | Change Maintenance Specification Skill |
 | GitHub | github-kernel, github-issues, github-pr-flow |
+
+## Handoff Prompts
+
+Use these prompts to trigger workflow transitions:
+
+| Label | Trigger |
+|-------|---------|
+| **✅ Clarifications Updated** | User has answered questions in `CLARIFICATIONS.md` |
+| **🔄 Refine Roadmap** | Process inline roadmap comments and regenerate |
+| **🚀 Roadmap Approved** | Roadmap is comment-free, create PR and issue |
 
 ## Key Invariants
 
@@ -71,6 +102,14 @@ Invoke skills based on phase requirements:
 - Cloud agents are stateless and never create PRs/issues
 - Epics group execution only—not content
 
+## Failure Handling
+
+If any invariant is violated:
+
+1. **Halt progression** immediately
+2. **Surface the violation** clearly to the user
+3. **Request human intervention** before continuing
+
 ## Examples
 
 ### Completion Output
@@ -83,17 +122,40 @@ After Phase 5, output this to the user and STOP:
 Next steps (manual):
 
 1. Navigate to the Instructional Issue: [Link]
-2. Assign to @github-copilot (select branch: docs/planning-baseline)
+2. Assign to @github-copilot:
+   - CRITICAL: Switch your local branch to `docs/planning-baseline`
+   - Copilot will generate Epic, Feature, and Execution Flow docs
 3. After Copilot completes, review the Planning PR
 4. Merge to main
+
+🛑 The orchestrator's role ends here.
 ```
+
+**The orchestrator MUST NOT:**
+
+- Continue beyond Phase 5
+- Wait for PR merge
+- Wait for issue assignment
+- Attempt to generate documentation itself
+- Create additional issues or PRs
 
 ## Limitations
 
 - Does NOT write PRD, roadmap, epic, or feature content (delegates to skills)
 - Does NOT decide business intent or feature behavior
 - Does NOT store state between runs
-- Stops at Phase 5—human handoff required for cloud agent assignment
+- **Stops at Phase 5** — human handoff required for cloud agent assignment
+- Does NOT wait for PR merge or assignment
+- Does NOT generate documentation itself
+
+## Post-Orchestrator Flow
+
+After the orchestrator stops at Phase 5:
+
+**Phase 6 (Human Manual Steps):**
+1. Switch to `docs/planning-baseline` branch
+2. Assign Instructional Issue to @github-copilot
+3. Review and merge Planning PR
 
 ## Supporting References
 
