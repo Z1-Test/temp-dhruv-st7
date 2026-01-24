@@ -1,19 +1,28 @@
-# 📄 Feature Specification Template
+---
+feature_name: "<short, human-readable name>"
+bounded_context: "<domain or context name>"
+parent_epic: "<name of the epic (e.g., 'Foundation')>"
+status: "draft"
+---
+
+# Feature: <Feature Name>
 
 > **Purpose:**
-> This document defines a single feature’s intent, scope, user experience, and completion criteria.
+> This document defines a single feature's intent, scope, user experience, and completion criteria.
 > It is the **single source of truth** for planning, review, automation, and execution.
 
 ---
 
 ## 0. Metadata
 
-```yaml
-feature_name: "<short, human-readable name>"
-bounded_context: "<domain or context name>"
-status: "draft | approved | implemented"
-owner: "<team, role, or responsibility group>"
-```
+All metadata is defined in the frontmatter above (between the `---` markers).
+
+**Important:** The frontmatter is used by automation scripts to:
+
+- Create GitHub issues
+- Link features to parent epics
+- Generate feature flags
+- Track status and ownership
 
 ---
 
@@ -21,11 +30,25 @@ owner: "<team, role, or responsibility group>"
 
 **Briefly describe the feature and its purpose.**
 
-* What this feature enables
-* Why it exists
-* What meaningful change it introduces
+- What this feature enables
+- Why it exists
+- What meaningful change it introduces
 
 This section must be understandable without prior context.
+
+## Flow Diagram
+
+Include a focused Mermaid diagram when helpful to show the primary user journey or state transitions. Keep diagrams small and link them to related scenarios (e.g., "See Scenario 1.1").
+
+```mermaid
+flowchart LR
+  Start[Start] --> Step1[User attempts action]
+  Step1 --> Step2{Success?}
+  Step2 -- Yes --> End[Completed]
+  Step2 -- No --> Error[Show user-friendly error]
+```
+
+Caption: "High-level flow for the primary user journey."
 
 ---
 
@@ -35,10 +58,10 @@ This section must be understandable without prior context.
 
 Focus on lived experience rather than system limitations.
 
-* Who experiences the problem
-* When and in what situations it occurs
-* What friction, confusion, or inefficiency exists today
-* Why existing behavior or solutions are insufficient
+- Who experiences the problem
+- When and in what situations it occurs
+- What friction, confusion, or inefficiency exists today
+- Why existing behavior or solutions are insufficient
 
 ---
 
@@ -46,14 +69,14 @@ Focus on lived experience rather than system limitations.
 
 ### User Experience Goals
 
-* How this feature improves the user’s day-to-day experience
-* What becomes easier, clearer, faster, safer, or more reliable
-* How the experience improves across the user lifecycle
+- How this feature improves the user’s day-to-day experience
+- What becomes easier, clearer, faster, safer, or more reliable
+- How the experience improves across the user lifecycle
 
 ### Business / System Goals
 
-* Desired business outcomes
-* System or platform-level improvements
+- Desired business outcomes
+- System or platform-level improvements
 
 ---
 
@@ -61,9 +84,9 @@ Focus on lived experience rather than system limitations.
 
 **Explicitly state what this feature does not attempt to solve.**
 
-* Out-of-scope behaviors
-* Related problems intentionally deferred
-* Boundaries that protect focus
+- Out-of-scope behaviors
+- Related problems intentionally deferred
+- Boundaries that protect focus
 
 ---
 
@@ -71,15 +94,15 @@ Focus on lived experience rather than system limitations.
 
 **Describe what the feature enables at a conceptual level.**
 
-* Core capabilities
-* Expected behaviors
-* System responsibilities
+- Core capabilities
+- Expected behaviors
+- System responsibilities
 
 Avoid:
 
-* UI design
-* API definitions
-* Implementation or technology choices
+- UI design
+- API definitions
+- Implementation or technology choices
 
 ---
 
@@ -87,9 +110,9 @@ Avoid:
 
 **List conditions required for this feature to function as intended.**
 
-* Dependencies on other features or capabilities
-* Assumptions about user behavior or environment
-* External or organizational constraints
+- Dependencies on other features or capabilities
+- Assumptions about user behavior or environment
+- External or organizational constraints
 
 ---
 
@@ -174,9 +197,9 @@ Repeat the same structure for each additional user story.
 
 **Include only cases that materially affect user experience.**
 
-* Hard limits users may encounter
-* Irreversible actions or consequences
-* Compliance, safety, or policy constraints that shape behavior
+- Hard limits users may encounter
+- Irreversible actions or consequences
+- Compliance, safety, or policy constraints that shape behavior
 
 ---
 
@@ -186,11 +209,17 @@ Repeat the same structure for each additional user story.
 > Every task must map back to a specific scenario defined in Section 7.
 
 ```markdown
-- [ ] T01 [Scenario 1.1] — <detailed technical task for initial experience>
-- [ ] T02 [Scenario 1.2] — <technical task for optimization/efficiency>
-- [ ] T03 [Scenario 1.3] — <technical task for state preservation/recovery>
-- [ ] T04 [Scenario 1.4] — <technical task for error handling/feedback>
-- [ ] T05 [Rollout] — <technical task for feature flag implementation/gating>
+- [ ] T01 — <detailed technical task for Scenario 1.1>
+  - [ ] Unit Test: <specific logic or component to be tested>
+  - [ ] E2E Test: <specific user journey to be validated>
+- [ ] T02 — <detailed technical task for Scenario 1.2>
+  - [ ] Unit Test: <specific optimization or edge case to be tested>
+- [ ] T03 — <detailed technical task for Scenario 1.3>
+  - [ ] Integration Test: <specific state recovery or component interaction to be tested>
+- [ ] T04 — <detailed technical task for Scenario 1.4>
+  - [ ] E2E Test: <specific error journey or recovery feedback to be validated>
+- [ ] T05 — [Rollout] <technical task for feature flag gating>
+  - [ ] Integration Test: <verification of flag state and gating logic>
 ```
 
 ---
@@ -201,28 +230,42 @@ Repeat the same structure for each additional user story.
 > Each criterion must be observable and testable.
 
 ```markdown
-- [ ] AC1 [Initial] — <verifiable outcome of Scenario 1.1>
-- [ ] AC2 [Efficiency] — <verifiable outcome of Scenario 1.2>
-- [ ] AC3 [Recovery] — <verifiable outcome of Scenario 1.3>
-- [ ] AC4 [Reliability] — <verifiable outcome of Scenario 1.4/1.5>
-- [ ] AC5 [Gating] — <verifiable verification of the feature flag behavior>
+- [ ] AC1 — <verifiable outcome for Scenario 1.1>
+  - [ ] Unit test passed: <specific assertion>
+  - [ ] E2E test passed: <specific observation>
+- [ ] AC2 — <verifiable outcome for Scenario 1.2>
+  - [ ] Unit test passed: <specific performance or state assertion>
+- [ ] AC3 — <verifiable outcome for Scenario 1.3>
+  - [ ] Integration test passed: <specific data integrity assertion>
+- [ ] AC4 — <verifiable outcome for Scenario 1.4>
+  - [ ] E2E test passed: <specific human-readable error assertion>
+- [ ] AC5 — [Gating] Feature flag correctly controls visibility and access
+  - [ ] Integration test passed: <flag state verification>
 ```
 
 ---
 
 ## 11. Rollout & Risk (If Applicable)
 
-* Rollout strategy
-* Risk mitigation approach
-* Exit or cleanup criteria if temporary behavior exists
+- Rollout strategy
+- Risk mitigation approach
+- Exit or cleanup criteria if temporary behavior exists
+
+### Remote Config Flags
+
+<!-- REMOTE_CONFIG_FLAG_START -->
+| Context | Type | Namespace | Default (Dev) | Default (Stg) | Default (Prod) | Key |
+|---------|------|-----------|---------------|---------------|----------------|-----|
+| <flag_context> | BOOLEAN | client | true | false | false | _auto-generated_ |
+<!-- REMOTE_CONFIG_FLAG_END -->
 
 ---
 
 ## 12. History & Status
 
-* **Status:** Draft / Approved / Implemented
-* **Related Epics:** `<linked after automation>`
-* **Related Issues:** `<created post-merge>`
+- **Status:** Draft / Approved / Implemented
+- **Related Epics:** `<linked after automation>`
+- **Related Issues:** `<created post-merge>`
 
 ---
 

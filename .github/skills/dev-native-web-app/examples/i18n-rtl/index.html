@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internationalization Example | i18n & RTL Support</title>
+    <meta name="description"
+        content="Demonstration of internationalization best practices including lang attributes, hreflang, RTL support, and CSS logical properties.">
+
+    <!-- hreflang for language alternatives -->
+    <link rel="alternate" hreflang="en" href="https://example.com/en/">
+    <link rel="alternate" hreflang="ar" href="https://example.com/ar/">
+    <link rel="alternate" hreflang="he" href="https://example.com/he/">
+    <link rel="alternate" hreflang="ja" href="https://example.com/ja/">
+    <link rel="alternate" hreflang="x-default" href="https://example.com/">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <nav aria-label="Main navigation">
+            <a href="/" aria-current="page">Home</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+        </nav>
+
+        <!-- Language Switcher -->
+        <div class="language-switcher">
+            <label for="language-select" class="visually-hidden">Select language</label>
+            <select id="language-select" onchange="switchLanguage(this.value)">
+                <option value="en" selected>English</option>
+                <option value="ar">العربية</option>
+                <option value="he">עברית</option>
+                <option value="ja">日本語</option>
+            </select>
+        </div>
+    </header>
+
+    <main>
+        <h1>Internationalization Example</h1>
+
+        <section aria-labelledby="dates-heading">
+            <h2 id="dates-heading">Formatted Dates</h2>
+            <p>Using <code translate="no">Intl.DateTimeFormat</code>:</p>
+            <ul id="date-examples"></ul>
+        </section>
+
+        <section aria-labelledby="numbers-heading">
+            <h2 id="numbers-heading">Formatted Numbers</h2>
+            <p>Using <code translate="no">Intl.NumberFormat</code>:</p>
+            <ul id="number-examples"></ul>
+        </section>
+
+        <section aria-labelledby="currency-heading">
+            <h2 id="currency-heading">Formatted Currency</h2>
+            <ul id="currency-examples"></ul>
+        </section>
+
+        <section aria-labelledby="relative-heading">
+            <h2 id="relative-heading">Relative Time</h2>
+            <p>Using <code translate="no">Intl.RelativeTimeFormat</code>:</p>
+            <ul id="relative-examples"></ul>
+        </section>
+
+        <section aria-labelledby="rtl-heading">
+            <h2 id="rtl-heading">RTL Text Example</h2>
+            <p lang="ar" dir="rtl">هذا مثال على النص العربي من اليمين إلى اليسار.</p>
+            <p lang="he" dir="rtl">זוהי דוגמה לטקסט בעברית מימין לשמאל.</p>
+        </section>
+
+        <section aria-labelledby="mixed-heading">
+            <h2 id="mixed-heading">Bidirectional Text</h2>
+            <p>
+                The Arabic word for "hello" is
+                <span lang="ar" dir="rtl">مرحبا</span>
+                and in Hebrew it's
+                <span lang="he" dir="rtl">שלום</span>.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            <!-- Content that shouldn't be translated -->
+            <span translate="no">Example Corp</span> ©
+            <span id="current-year"></span>
+        </p>
+    </footer>
+
+    <script src="i18n.js"></script>
+</body>
+
+</html>

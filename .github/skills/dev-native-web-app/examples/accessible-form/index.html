@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Form Example | WCAG 2.2 AA Compliant</title>
+    <meta name="description"
+        content="A fully accessible contact form demonstrating WCAG 2.2 AA compliance with ARIA, focus management, and error handling.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <main>
+        <h1>Contact Us</h1>
+        <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+
+        <form id="contact-form" novalidate>
+            <!-- Live region for form status announcements -->
+            <div id="form-status" role="status" aria-live="polite" class="visually-hidden"></div>
+
+            <!-- Error summary (shown when form has errors) -->
+            <div id="error-summary" role="alert" aria-labelledby="error-summary-title" hidden>
+                <h2 id="error-summary-title">Please fix the following errors:</h2>
+                <ul id="error-list"></ul>
+            </div>
+
+            <!-- Name Field -->
+            <div class="form-group">
+                <label for="name">
+                    Full Name
+                    <span aria-hidden="true" class="required">*</span>
+                </label>
+                <input type="text" id="name" name="name" autocomplete="name" required aria-required="true"
+                    aria-describedby="name-hint name-error">
+                <span id="name-hint" class="hint">Enter your first and last name</span>
+                <span id="name-error" class="error" role="alert" hidden></span>
+            </div>
+
+            <!-- Email Field -->
+            <div class="form-group">
+                <label for="email">
+                    Email Address
+                    <span aria-hidden="true" class="required">*</span>
+                </label>
+                <input type="email" id="email" name="email" autocomplete="email" required aria-required="true"
+                    aria-describedby="email-hint email-error">
+                <span id="email-hint" class="hint">We'll never share your email</span>
+                <span id="email-error" class="error" role="alert" hidden></span>
+            </div>
+
+            <!-- Phone Field (Optional) -->
+            <div class="form-group">
+                <label for="phone">Phone Number (optional)</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel" aria-describedby="phone-hint">
+                <span id="phone-hint" class="hint">Format: +1 (555) 123-4567</span>
+            </div>
+
+            <!-- Subject (Radio Group) -->
+            <fieldset>
+                <legend>
+                    Subject
+                    <span aria-hidden="true" class="required">*</span>
+                </legend>
+                <div class="radio-group" role="radiogroup" aria-required="true">
+                    <div class="radio-option">
+                        <input type="radio" id="subject-general" name="subject" value="general" required>
+                        <label for="subject-general">General Inquiry</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="subject-support" name="subject" value="support">
+                        <label for="subject-support">Technical Support</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="subject-sales" name="subject" value="sales">
+                        <label for="subject-sales">Sales Question</label>
+                    </div>
+                </div>
+                <span id="subject-error" class="error" role="alert" hidden></span>
+            </fieldset>
+
+            <!-- Message Field -->
+            <div class="form-group">
+                <label for="message">
+                    Message
+                    <span aria-hidden="true" class="required">*</span>
+                </label>
+                <textarea id="message" name="message" rows="5" required aria-required="true"
+                    aria-describedby="message-hint message-error"></textarea>
+                <span id="message-hint" class="hint">Minimum 20 characters</span>
+                <span id="message-error" class="error" role="alert" hidden></span>
+            </div>
+
+            <!-- Consent Checkbox -->
+            <div class="form-group checkbox-group">
+                <input type="checkbox" id="consent" name="consent" required aria-required="true"
+                    aria-describedby="consent-error">
+                <label for="consent">
+                    I agree to the <a href="/privacy">Privacy Policy</a>
+                    <span aria-hidden="true" class="required">*</span>
+                </label>
+                <span id="consent-error" class="error" role="alert" hidden></span>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit">Send Message</button>
+
+            <p class="required-note">
+                <span aria-hidden="true">*</span> Required fields
+            </p>
+        </form>
+    </main>
+
+    <script src="form.js"></script>
+</body>
+
+</html>
