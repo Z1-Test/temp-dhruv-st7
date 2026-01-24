@@ -1,6 +1,6 @@
 # 📘 Product Requirements Document (PRD)
 
-**Version:** `1.1.0` | **Status:** `Ready for Roadmap`
+**Version:** `1.0.0` | **Status:** `Draft`
 
 ## Table of Contents
 
@@ -33,14 +33,14 @@
 
 ## 1. Document Information
 
-| Field              | Details                                  |
-| ------------------ | ---------------------------------------- |
-| **Document Title** | `itsme.fashion Premium Beauty Platform Strategic PRD` |
-| **File Location**  | `docs/product/PRD.md`                    |
-| **Version**        | `1.1.0`                                  |
-| **Date**           | `2025-12-30`                             |
-| **Author(s)**      | `Product Team`                           |
-| **Stakeholders**   | `Product, Engineering, Operations`       |
+| Field              | Details                           |
+| ------------------ | --------------------------------- |
+| **Document Title** | `itsme.fashion Strategic PRD`     |
+| **File Location**  | `docs/product/PRD.md`             |
+| **Version**        | `1.0.0`                           |
+| **Date**           | `2026-01-24`                      |
+| **Author(s)**      | Product Team                      |
+| **Stakeholders**   | Product, Engineering, Operations  |
 
 ---
 
@@ -62,88 +62,83 @@ Execution may be human-driven, agent-driven, or hybrid.
 
 ## 3. Feature Index (Living Blueprints)
 
-_This section will be populated during roadmap decomposition and feature specification phases._
-
-| Feature ID  | Title             | GitHub Issue  | Blueprint Path                      | Status           |
-| ----------- | ----------------- | ------------- | ----------------------------------- | ---------------- |
-| TBD         | TBD               | TBD           | TBD                                 | TBD              |
+| Feature ID | Title                      | GitHub Issue | Blueprint Path                                | Status  |
+| ---------- | -------------------------- | ------------ | --------------------------------------------- | ------- |
+| TBD        | User Authentication        | TBD          | `docs/features/feat-001-user-auth.md`         | Pending |
+| TBD        | Product Catalog            | TBD          | `docs/features/feat-002-product-catalog.md`   | Pending |
+| TBD        | Shopping Cart              | TBD          | `docs/features/feat-003-shopping-cart.md`     | Pending |
+| TBD        | Wishlist                   | TBD          | `docs/features/feat-004-wishlist.md`          | Pending |
+| TBD        | Checkout & Payment         | TBD          | `docs/features/feat-005-checkout-payment.md`  | Pending |
+| TBD        | Order Management           | TBD          | `docs/features/feat-006-order-management.md`  | Pending |
+| TBD        | Shipment Tracking          | TBD          | `docs/features/feat-007-shipment-tracking.md` | Pending |
 
 ---
 
 ## 4. Product Vision
 
-> Empower people to express their uniqueness with premium, clean, and cruelty-free beauty products delivered through a fast, trustworthy, and elegant shopping experience.
+Empower people to express their uniqueness with premium, clean, and cruelty-free beauty products delivered through a fast, trustworthy, and elegant shopping experience.
 
-**itsme.fashion** represents a modern approach to beauty ecommerce that prioritizes:
-
-- **Ethical sourcing and production** — Cruelty-free, natural ingredients, sustainable practices
-- **Premium quality** — Curated selection of skin care, hair care, and cosmetics that deliver results
-- **User empowerment** — Transparent product information, ingredient lists, and usage guidance
-- **Seamless experience** — Mobile-first design, fast checkout, reliable order fulfillment
-- **Brand authenticity** — Bold, empowering tone that celebrates individuality
+**itsme.fashion** aims to become the trusted destination for conscious consumers seeking premium beauty products that emphasize natural ingredients, ethical manufacturing, and sustainable practices, all delivered through a modern, mobile-first ecommerce platform.
 
 ---
 
 ## 5. Core Business Problem
 
-### Problem Statement
+Conscious consumers seeking premium beauty products with natural ingredients and ethical manufacturing face significant barriers in online shopping:
 
-Beauty consumers increasingly seek **ethical, high-quality products** with transparent ingredient sourcing, but face several challenges:
+1. **Trust & Transparency Gap**: Users cannot easily verify product ingredients, ethical certifications, or manufacturing practices, leading to purchase hesitation and abandoned carts.
 
-1. **Trust deficit** — Difficulty verifying ethical claims (cruelty-free, vegan, paraben-free)
-2. **Information overload** — Lack of clear ingredient information and usage guidance
-3. **Fragmented experience** — Clunky mobile experiences, complex checkout flows
-4. **Limited discovery** — Poor product discovery mechanisms across skin, hair, and cosmetics categories
-5. **Order anxiety** — Inadequate tracking and communication after purchase
+2. **Fragmented Shopping Experience**: Existing beauty ecommerce platforms fail to provide seamless mobile-first experiences, forcing users through clunky desktop-oriented flows that increase friction and decrease conversion.
 
-These pain points result in:
-- Abandoned carts
-- Brand switching
-- Reduced customer lifetime value
-- Negative word-of-mouth
+3. **Post-Purchase Anxiety**: After purchase, customers experience uncertainty due to poor order visibility and shipment tracking, resulting in increased support requests and reduced repeat purchase rates.
 
-### Opportunity
+4. **Discovery Friction**: Users struggle to find products matching their specific needs (skin type, hair concerns, ethical preferences) due to poor categorization and search capabilities.
 
-The clean beauty market is growing at 8-10% annually. Consumers, particularly millennials and Gen Z, are willing to pay premium prices for products that align with their values. A platform that solves trust, transparency, and experience problems can capture significant market share.
+These problems result in:
+- High cart abandonment rates (industry avg: 70-85%)
+- Low customer lifetime value due to poor retention
+- Increased customer service overhead
+- Missed revenue from users who can't find what they need
 
 ---
 
 ## 6. Target Personas & Primary Use Cases
 
-| Persona     | Description     | Goals     | Key Use Cases |
-| ----------- | --------------- | --------- | ------------- |
-| **The Conscious Consumer** | Age 25-40, values sustainability and ethical production, willing to pay premium prices | Find trustworthy beauty products with verified ethical claims; understand ingredients; support brands aligned with values | Browse by ethical markers (cruelty-free, vegan); read detailed ingredient information; save favorites for later purchase |
-| **The Beauty Enthusiast** | Age 20-35, actively explores new products, follows beauty trends, shares recommendations | Discover new products across categories; build collection; track orders; share finds with community | Search and filter by category; create wishlist; receive order updates; access full product catalog |
-| **The Routine Builder** | Age 30-50, seeks consistent, effective products for specific skin/hair needs | Build effective skin/hair care routine; reorder reliably; receive products quickly | Filter by skin/hair type; add to cart; checkout with saved payment and address; track shipment |
-| **The Gift Shopper** | Any age, purchasing for others | Find premium, well-presented products suitable as gifts; ensure timely delivery | Browse curated collections; checkout with different shipping address; receive delivery confirmation |
+| Persona                    | Description                                                                 | Goals                                                             | Key Use Cases                                       |
+| -------------------------- | --------------------------------------------------------------------------- | ----------------------------------------------------------------- | --------------------------------------------------- |
+| **Conscious Millennial**   | Age 25-40, values sustainability, researches products before purchase       | Find cruelty-free, natural products; verify ethical claims       | Browse by ethical markers, read ingredient lists    |
+| **Mobile-First Shopper**   | Age 18-35, shops primarily on mobile, expects instant gratification         | Complete purchase quickly on mobile; track orders in real-time   | Add to cart, checkout, track shipment—all on phone |
+| **Beauty Enthusiast**      | Age 22-45, follows trends, explores new products, builds collections        | Discover new products; save favorites; manage wishlists          | Search, filter, save to wishlist, repeat purchase  |
+| **Gift Buyer**             | Age 25-50, purchasing for others, needs reliability and presentation        | Quick purchase flow; reliable delivery; order tracking           | Browse, checkout, track, ensure timely delivery    |
+| **Returning Customer**     | Existing user, seeks convenience and loyalty rewards                        | Fast re-order; access order history; manage multiple addresses   | View order history, saved addresses, quick checkout |
 
 ---
 
 ## 7. Business Value & Expected Outcomes
 
-| Outcome     | Description | KPI Alignment | Priority |
-| ----------- | ----------- | ------------- | -------- |
-| **Increased Conversion Rate** | Seamless mobile-first experience and trusted ethical markers reduce friction in purchase decision | KPI-001, KPI-002 | High |
-| **Higher Average Order Value** | Rich product information and effective discovery mechanisms encourage multi-item purchases | KPI-003 | High |
-| **Improved Customer Retention** | Transparent communication, reliable fulfillment, and wishlist functionality drive repeat purchases | KPI-004, KPI-005 | High |
-| **Reduced Cart Abandonment** | Streamlined checkout with multiple payment options and clear shipping information | KPI-002, KPI-006 | High |
-| **Enhanced Brand Trust** | Verified ethical claims, detailed ingredient transparency, and consistent quality | KPI-007 | Medium |
-| **Operational Efficiency** | Integrated payment, shipping, and notification systems reduce manual overhead | KPI-008 | Medium |
+| Outcome                           | Description                                                         | KPI Alignment | Priority |
+| --------------------------------- | ------------------------------------------------------------------- | ------------- | -------- |
+| **Increased Conversion Rate**     | Reduce cart abandonment through seamless mobile-first checkout      | KPI-001       | High     |
+| **Higher Customer Lifetime Value**| Drive repeat purchases via wishlist and order history features      | KPI-002       | High     |
+| **Reduced Support Overhead**      | Decrease support tickets through self-service order tracking        | KPI-003       | Medium   |
+| **Improved Product Discovery**    | Increase product views and cart additions via enhanced search       | KPI-004       | High     |
+| **Trust & Brand Loyalty**         | Build trust through transparent ethical markers and ingredient info | KPI-005       | High     |
+| **Operational Efficiency**        | Automate order fulfillment and tracking via Shiprocket integration  | KPI-006       | Medium   |
 
 ---
 
 ## 8. Success Metrics / KPIs
 
-| KPI ID     | Name     | Definition      | Baseline  | Target    | Source |
-| ---------- | -------- | --------------- | --------- | --------- | ------ |
-| **KPI-001** | Conversion Rate | (Completed Orders / Unique Visitors) × 100 | TBD | 3.5% | GA4 |
-| **KPI-002** | Cart Abandonment Rate | (Carts Created - Orders Completed) / Carts Created × 100 | TBD | <65% | GA4 |
-| **KPI-003** | Average Order Value (AOV) | Total Revenue / Number of Orders | TBD | $75 | OTEL + Firestore |
-| **KPI-004** | Customer Retention Rate (30-day) | Customers with 2+ orders within 30 days / Total customers | TBD | 25% | Firestore |
-| **KPI-005** | Repeat Purchase Rate (90-day) | Customers with 2+ orders within 90 days / Total customers | TBD | 40% | Firestore |
-| **KPI-006** | Checkout Completion Time | Average time from cart to order confirmation | TBD | <3 minutes | GA4 + OTEL |
-| **KPI-007** | Net Promoter Score (NPS) | Standard NPS calculation from post-purchase survey | TBD | >50 | Survey tool |
-| **KPI-008** | Order Fulfillment Time | Time from order to shipment | TBD | <48 hours | Shiprocket + OTEL |
+| KPI ID  | Name                        | Definition                                            | Baseline | Target   | Source               |
+| ------- | --------------------------- | ----------------------------------------------------- | -------- | -------- | -------------------- |
+| KPI-001 | Cart Abandonment Rate       | % of carts not converted to orders                    | 75%      | <50%     | GA4 + Firestore     |
+| KPI-002 | Customer Lifetime Value     | Average revenue per customer over 12 months           | $0       | $150     | Firestore Analytics  |
+| KPI-003 | Support Ticket Volume       | Number of order-related support tickets per month     | Unknown  | <100     | Support System       |
+| KPI-004 | Product Discovery Rate      | % of sessions with product view after search          | Unknown  | >60%     | GA4                  |
+| KPI-005 | Repeat Purchase Rate        | % of customers making 2+ purchases within 6 months    | 0%       | >35%     | Firestore Analytics  |
+| KPI-006 | Order Processing Time       | Time from order placement to shipment handoff         | Unknown  | <24hrs   | Firestore Events     |
+| KPI-007 | Mobile Conversion Rate      | % of mobile sessions converting to orders             | Unknown  | >3%      | GA4                  |
+| KPI-008 | Average Order Value         | Average transaction value                             | $0       | $75      | Firestore Analytics  |
 
 ---
 
@@ -151,21 +146,18 @@ The clean beauty market is growing at 8-10% annually. Consumers, particularly mi
 
 All domain terms **must be defined once and reused consistently**.
 
-* **Product** — A purchasable beauty item (skin care, hair care, or cosmetic) with SKU, pricing, inventory, and metadata
-* **Catalog** — The complete collection of Products organized by Category
-* **Category** — Organizational grouping (Skin Care, Hair Care, Cosmetics)
-* **Cart** — Temporary collection of Products with quantities, persisted per session/user. When a guest authenticates, their guest cart replaces any existing authenticated cart. Cart items store product snapshot including price at time of addition.
-* **Wishlist** — Saved collection of Products for future purchase (authenticated users only). Private per user; no sharing functionality.
-* **Order** — A confirmed purchase with payment, shipping address, and line items. Immutable after creation; captures product snapshot. One cart maps to one order with one shipping address.
-* **Line Item** — Individual Product and quantity within an Order or Cart
-* **User** — Authenticated person with account, profile, orders, wishlist
-* **Guest** — Unauthenticated visitor (can browse, use cart, cannot save wishlist or view orders)
-* **Payment** — Transaction processed via Cashfree gateway
-* **Shipment** — Physical delivery of Order items via Shiprocket carrier
-* **Ethical Marker** — Badge indicating product attribute (cruelty-free, vegan, paraben-free)
-* **Ingredient** — Component substance in a Product with safety/ethical metadata
-* **Address** — Shipping or billing location with validation
-* **Inventory** — Stock quantity and availability status for a Product
+* **Product** — A beauty item available for purchase (cosmetic, skin care, or hair care product)
+* **Cart** — Temporary collection of products a user intends to purchase
+* **Wishlist** — Saved collection of products for future consideration (requires authentication)
+* **Order** — Confirmed purchase transaction with payment and shipping details
+* **Shipment** — Physical delivery of an order tracked via carrier integration
+* **Ethical Marker** — Badge indicating product attributes (cruelty-free, vegan, paraben-free, natural)
+* **Aggregate** — DDD term for a cluster of domain objects treated as a single unit
+* **Bounded Context** — DDD term for a logical boundary within which a domain model is defined
+* **Command** — Write operation that changes system state
+* **Query** — Read operation that retrieves data without side effects
+* **Domain Event** — Fact about something that happened in the domain (e.g., OrderPlaced, PaymentCompleted)
+* **Session** — User's interaction period, persisted for cart continuity across visits
 
 ---
 
@@ -173,93 +165,64 @@ All domain terms **must be defined once and reused consistently**.
 
 ### Bounded Contexts
 
-| Context     | Purpose     | Core Aggregate | Entities     | Value Objects |
-| ----------- | ----------- | -------------- | ------------ | ------------- |
-| **Catalog** | Manage product information, categories, and discovery. Flat single-level categories only. Ingredients and ethical markers manually verified by internal team. Basic client-side search by name and category. | Product | Product, Category, Ingredient | ProductId, CategoryId, Price, EthicalMarker, ImageUrl |
-| **Identity** | User authentication, registration, profile management. Firebase Auth default session (1hr access, 30-day refresh). Account deletion blocked if active orders exist. | User | User, UserProfile | UserId, Email, Password (hashed), DisplayName |
-| **Cart** | Shopping cart management for guests and users. Guest cart replaces authenticated cart on login. Last-write-wins concurrency model. | Cart | Cart, CartItem | CartId, Quantity, SessionId, PriceSnapshot |
-| **Wishlist** | Saved product collections for authenticated users. Private only; no sharing. Blocks add-to-cart if product unavailable. | Wishlist | Wishlist, WishlistItem | WishlistId, UserId, ProductId |
-| **Order** | Order creation, payment processing, order history. Immutable after creation. Captures product snapshot. Payment failures result in no Order record (rollback). One order = one shipping address. | Order | Order, OrderItem, Payment | OrderId, OrderStatus, PaymentStatus, Amount, ProductSnapshot |
-| **Fulfillment** | Shipment creation, tracking, carrier integration. Shiprocket tracking state is authoritative. No partial shipments; all order items ship together. | Shipment | Shipment, TrackingInfo | ShipmentId, TrackingNumber, Carrier, ShipmentStatus |
-| **Notification** | Email notifications for order events. Retry failures 3 times, then log and continue (non-blocking). | Notification | NotificationLog | NotificationId, Template, Recipient, RetryCount |
+| Context             | Purpose                                      | Core Aggregate  | Entities                        | Value Objects                      |
+| ------------------- | -------------------------------------------- | --------------- | ------------------------------- | ---------------------------------- |
+| **Identity**        | User authentication and profile management   | User            | User, AuthToken                 | Email, Password, UserRole          |
+| **Catalog**         | Product information and discovery            | Product         | Product, Category               | ProductId, Price, Ingredients, EthicalMarker |
+| **Shopping**        | Cart and wishlist management                 | Cart, Wishlist  | CartItem, WishlistItem          | Quantity, ProductReference         |
+| **Orders**          | Order lifecycle and payment processing       | Order           | Order, OrderLine, Payment       | OrderId, OrderStatus, PaymentStatus, Address |
+| **Fulfillment**     | Shipment and delivery tracking               | Shipment        | Shipment, TrackingEvent         | ShipmentId, CarrierInfo, TrackingNumber |
+| **Notifications**   | Event-driven communication                   | Notification    | EmailNotification               | NotificationStatus, TemplateId     |
 
-### Context Relationships
+### Context Map
 
-* **Catalog → Cart** — Cart references Products from Catalog (read-only)
-* **Catalog → Wishlist** — Wishlist references Products from Catalog (read-only)
-* **Identity → Cart** — Cart associates with User for authenticated sessions
-* **Identity → Wishlist** — Wishlist owned by User (authenticated only)
-* **Identity → Order** — Order owned by User
-* **Cart → Order** — Order created from Cart contents
-* **Order → Fulfillment** — Shipment created when Order confirmed
-* **Order → Notification** — Notifications triggered by Order events
-* **Fulfillment → Notification** — Notifications triggered by Shipment events
+```mermaid
+graph LR
+    Identity[Identity Context] -->|User Reference| Shopping[Shopping Context]
+    Identity -->|User Reference| Orders[Orders Context]
+    Catalog[Catalog Context] -->|Product Reference| Shopping
+    Catalog -->|Product Reference| Orders
+    Shopping -->|Cart to Order| Orders
+    Orders -->|Order Reference| Fulfillment[Fulfillment Context]
+    Orders -->|Events| Notifications[Notifications Context]
+    Fulfillment -->|Events| Notifications
+```
 
-### Business Rules (Clarified)
+### DDD Layer Structure (per service)
 
-**Cart Management:**
-- Guest-to-authenticated cart transition: Replace existing cart completely
-- Price snapshot stored in CartItem at time of addition
-- Concurrent modifications: Last write wins
-- Inventory check at checkout: Block if any item unavailable
-
-**Order Processing:**
-- Payment failure: Order creation rolled back (no record persists)
-- Order immutability: No modifications after creation; cancel and recreate
-- One cart = one order = one shipping address
-- Product snapshot captured in OrderItem
-
-**Fulfillment:**
-- Shiprocket tracking status is authoritative source
-- No partial shipments; all items ship together
-
-**Wishlist:**
-- Private per user; no sharing functionality
-- Add-to-cart blocked if product unavailable
-
-**Catalog:**
-- Flat single-level categories (Skin Care, Hair Care, Cosmetics)
-- Ingredients and ethical markers: Manual internal verification
-- Search: Basic client-side filtering by name and category
-
-**Identity & Security:**
-- Firebase Auth default sessions (1hr access token, 30-day refresh)
-- Account deletion blocked if active orders exist
-
-**Notifications:**
-- Retry failed emails 3 times, then log and continue
-- Non-blocking; failures don't halt workflows
-
-**Pricing & Taxes:**
-- Cashfree calculates taxes at payment time
-- Cart stores price snapshot to protect against mid-session changes
-
-**Analytics:**
-- Events are fire-and-forget; no offline queuing
+```
+src/services/<service>/
+├── domain/           # Pure business logic (no external dependencies)
+│   ├── aggregates/   # Core domain entities
+│   ├── events/       # Domain events
+│   └── value-objects/# Immutable value types
+├── application/      # Use cases and queries
+│   ├── commands/     # Command handlers (mutations)
+│   └── queries/      # Query handlers (reads)
+└── infrastructure/   # External integrations
+    ├── persistence/  # Firestore repositories
+    ├── graphql/      # Schema and resolvers
+    └── functions/    # Cloud Functions endpoints
+```
 
 ---
 
 ## 11. Event Taxonomy Summary
 
-| Event Name | Producer Context | Consumers    | Trigger Aggregate |
-| ---------- | ---------------- | ------------ | ----------------- |
-| **ProductAdded** | Catalog | Cart, Wishlist | Product |
-| **ProductUpdated** | Catalog | Cart, Wishlist | Product |
-| **ProductRemoved** | Catalog | Cart, Wishlist | Product |
-| **UserRegistered** | Identity | Order, Wishlist | User |
-| **UserProfileUpdated** | Identity | Order | User |
-| **CartItemAdded** | Cart | Analytics | Cart |
-| **CartItemRemoved** | Cart | Analytics | Cart |
-| **CartItemQuantityChanged** | Cart | Analytics | Cart |
-| **WishlistItemAdded** | Wishlist | Analytics | Wishlist |
-| **WishlistItemRemoved** | Wishlist | Analytics | Wishlist |
-| **OrderCreated** | Order | Fulfillment, Notification, Analytics | Order |
-| **PaymentCompleted** | Order | Fulfillment, Notification | Order |
-| **PaymentFailed** | Order | Notification | Order |
-| **OrderCancelled** | Order | Fulfillment, Notification | Order |
-| **ShipmentCreated** | Fulfillment | Notification | Shipment |
-| **ShipmentDispatched** | Fulfillment | Notification | Shipment |
-| **ShipmentDelivered** | Fulfillment | Notification, Analytics | Shipment |
+| Event Name             | Producer Context | Consumers                      | Trigger Aggregate |
+| ---------------------- | ---------------- | ------------------------------ | ----------------- |
+| UserRegistered         | Identity         | Notifications                  | User              |
+| UserLoggedIn           | Identity         | Analytics (via OTEL)           | User              |
+| ProductViewed          | Catalog          | Analytics                      | Product           |
+| ProductAddedToCart     | Shopping         | Analytics                      | Cart              |
+| ProductAddedToWishlist | Shopping         | Notifications                  | Wishlist          |
+| CartAbandoned          | Shopping         | Notifications (recovery email) | Cart              |
+| OrderPlaced            | Orders           | Fulfillment, Notifications     | Order             |
+| PaymentCompleted       | Orders           | Fulfillment, Notifications     | Order             |
+| PaymentFailed          | Orders           | Notifications                  | Order             |
+| ShipmentCreated        | Fulfillment      | Notifications                  | Shipment          |
+| ShipmentDispatched     | Fulfillment      | Notifications                  | Shipment          |
+| ShipmentDelivered      | Fulfillment      | Notifications, Orders          | Shipment          |
 
 ---
 
@@ -267,18 +230,13 @@ All domain terms **must be defined once and reused consistently**.
 
 All UI must use a **design system delivered via MCP**.
 
-| Parameter         | Value                  |
-| ----------------- | ---------------------- |
-| **MCP Server**    | `@modelcontextprotocol/server-figma` |
-| **Design System** | `itsme-fashion-design-system` |
-| **Component Library** | Web Components via Lit |
-| **Style Tokens** | CSS Custom Properties |
-
-**Requirements:**
-- All UI components must be built using Lit web components
-- Design tokens (colors, typography, spacing) sourced from Figma via MCP
-- No raw HTML/CSS without design system tokens except for layout scaffolding
-- Component library must be versioned and documented
+| Parameter         | Value                                  |
+| ----------------- | -------------------------------------- |
+| **MCP Server**    | `staystack-design-system`              |
+| **Design System** | `itsme-fashion-ds`                     |
+| **Component Library** | Lit Web Components with Preact Signals |
+| **CSS Strategy**  | Declarative Shadow DOM, CSS-first      |
+| **i18n Support**  | lit-localize                           |
 
 Raw HTML/CSS is prohibited unless explicitly approved in a Feature Blueprint.
 
@@ -286,12 +244,66 @@ Raw HTML/CSS is prohibited unless explicitly approved in a Feature Blueprint.
 
 ## 13. Feature Execution Flow
 
-**Diagram Required**
+### User Journey: Browse to Purchase
 
-* Format: **Mermaid**
-* Location: `docs/execution/execution-flow.md`
+```mermaid
+graph TD
+    A[Landing Page] --> B{Authenticated?}
+    B -->|No| C[Browse Catalog]
+    B -->|Yes| D[Personalized Browse]
+    C --> E[View Product Details]
+    D --> E
+    E --> F[Add to Cart]
+    E --> G[Add to Wishlist]
+    G --> H[Continue Browsing]
+    F --> I{Ready to Checkout?}
+    I -->|No| H
+    I -->|Yes| J{Authenticated?}
+    J -->|No| K[Login/Register]
+    J -->|Yes| L[Checkout Flow]
+    K --> L
+    L --> M[Select Shipping Address]
+    M --> N[Payment Gateway]
+    N --> O{Payment Success?}
+    O -->|No| P[Payment Failed - Retry]
+    O -->|Yes| Q[Order Confirmation]
+    P --> N
+    Q --> R[Email Notification]
+    Q --> S[Order Tracking Page]
+```
 
-_This diagram will be generated during roadmap decomposition phase, showing feature dependencies and execution order across bounded contexts._
+### Order Fulfillment Flow
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant Frontend
+    participant Orders
+    participant Payment as Payment Gateway
+    participant Fulfillment
+    participant Shiprocket
+    participant Notifications
+    
+    User->>Frontend: Complete Checkout
+    Frontend->>Orders: PlaceOrder Command
+    Orders->>Payment: Process Payment
+    Payment-->>Orders: PaymentCompleted Event
+    Orders->>Fulfillment: CreateShipment Command
+    Fulfillment->>Shiprocket: Create Shipment
+    Shiprocket-->>Fulfillment: Tracking Number
+    Fulfillment->>Notifications: ShipmentCreated Event
+    Notifications->>User: Confirmation Email
+    
+    Note over Shiprocket,User: Shipment in Transit
+    
+    Shiprocket->>Fulfillment: Webhook: Dispatched
+    Fulfillment->>Notifications: ShipmentDispatched Event
+    Notifications->>User: Dispatch Notification
+    
+    Shiprocket->>Fulfillment: Webhook: Delivered
+    Fulfillment->>Notifications: ShipmentDelivered Event
+    Notifications->>User: Delivery Confirmation
+```
 
 ---
 
@@ -299,199 +311,153 @@ _This diagram will be generated during roadmap decomposition phase, showing feat
 
 Source of truth is **GitHub**.
 
-```text
+```
 /
 ├── .github/
-│   ├── workflows/          # CI/CD pipelines
-│   ├── skills/             # Agent skills definitions
-│   └── PULL_REQUEST_TEMPLATE.md
+│   ├── workflows/        # CI/CD automation
+│   └── skills/           # Agent Skills
 ├── docs/
-│   ├── product/
-│   │   ├── PRD.md         # This document
-│   │   └── roadmap.md     # Feature roadmap
-│   ├── features/          # Feature specifications by context
-│   │   ├── catalog/
-│   │   ├── identity/
-│   │   ├── cart/
-│   │   ├── wishlist/
-│   │   ├── order/
-│   │   ├── fulfillment/
-│   │   └── notification/
-│   ├── epics/             # Epic groupings for execution
-│   ├── execution/         # Execution flow and dependencies
-│   └── diagrams/          # Architecture and flow diagrams
+│   ├── product/          # PRD and planning docs
+│   ├── features/         # Feature blueprints
+│   └── diagrams/         # Architecture diagrams
 ├── src/
-│   ├── services/          # Bounded context implementations
-│   │   ├── catalog/
-│   │   │   ├── domain/
-│   │   │   ├── application/
-│   │   │   └── infrastructure/
-│   │   ├── identity/
-│   │   ├── cart/
-│   │   ├── wishlist/
-│   │   ├── order/
-│   │   ├── fulfillment/
-│   │   └── notification/
-│   ├── shared/            # Shared kernel
-│   │   ├── events/
-│   │   ├── value-objects/
-│   │   └── types/
-│   └── frontend/          # Lit components
-│       ├── components/
-│       ├── pages/
-│       └── state/
-├── firebase.json
-├── package.json
+│   ├── frontend/         # Lit web components
+│   │   ├── components/   # Reusable components
+│   │   ├── pages/        # Page-level components
+│   │   └── state/        # Preact signals stores
+│   ├── services/         # Backend microservices
+│   │   ├── identity/     # User authentication
+│   │   ├── catalog/      # Product catalog
+│   │   ├── shopping/     # Cart & wishlist
+│   │   ├── orders/       # Order management
+│   │   ├── fulfillment/  # Shipment tracking
+│   │   └── notifications/# Email notifications
+│   ├── shared/           # Shared types & utilities
+│   └── gateway/          # GraphQL Mesh gateway
+├── firebase.json         # Firebase config
+├── package.json          # Root workspace config
 └── README.md
 ```
 
-**File Naming Conventions:**
-- Feature specs: `feat-<name>.md` (no numbers until automated assignment)
-- Epic docs: `epic-<name>.md`
-- Domain code: PascalCase for classes, camelCase for functions
-- GraphQL schemas: `schema.graphql` per service
-- Cloud Functions: `index.ts` as entry point per service
-
 ---
 
-## 15. Feature Blueprint Standard (Stories & Gherkin Scenarios)
+## 15. Feature Blueprint Standard
 
 Each feature blueprint **must include**:
 
-1. **Metadata** (issue URL, status, bounded context)
+1. **Metadata** (issue URL, status, epic reference)
 2. **Deployment Plan** (Feature Flag defined)
-3. **Stories (Vertical Slices)** — User-facing increments
-4. **Scenarios — Gherkin (Mandatory)** — Executable acceptance criteria
+3. **Stories (Vertical Slices)** - User stories delivering end-to-end value
+4. **Scenarios — Gherkin (Mandatory)** - Executable acceptance criteria
 
 ### Gherkin Format
 
-All feature scenarios must follow this format:
-
 ```gherkin
-Feature: <Feature Name>
+Feature: User Authentication
 
-  Scenario: <Scenario Name>
-    Given <initial context>
-    When <action>
-    Then <expected outcome>
+Scenario: Successful user registration
+  Given I am on the registration page
+  When I enter valid email "user@example.com"
+  And I enter valid password "SecurePass123!"
+  And I submit the registration form
+  Then I should see a confirmation message
+  And I should receive a verification email
+  And my account should be created in Firebase Auth
+
+Scenario: Registration with existing email
+  Given an account exists with email "existing@example.com"
+  When I attempt to register with email "existing@example.com"
+  Then I should see an error "Email already in use"
+  And the registration should not proceed
 ```
-
-**Requirements:**
-- Every story must have at least one scenario
-- Scenarios must be testable
-- Use domain language from Ubiquitous Language section
-- Cover happy path and key error cases
 
 ---
 
 ## 16. Traceability & Compliance Matrix
 
-_This section will be populated during feature specification phase._
-
-| Feature ID | Flag ID | Flag Key | Bounded Context | Status     |
-| ---------- | ------- | -------- | --------------- | ---------- |
-| TBD        | TBD     | TBD      | TBD             | TBD        |
+| Feature ID | Flag ID | Flag Key                       | Bounded Context | Status  |
+| ---------- | ------- | ------------------------------ | --------------- | ------- |
+| TBD        | TBD     | `feature_user_auth`            | Identity        | Pending |
+| TBD        | TBD     | `feature_product_catalog`      | Catalog         | Pending |
+| TBD        | TBD     | `feature_shopping_cart`        | Shopping        | Pending |
+| TBD        | TBD     | `feature_wishlist`             | Shopping        | Pending |
+| TBD        | TBD     | `feature_checkout_payment`     | Orders          | Pending |
+| TBD        | TBD     | `feature_order_management`     | Orders          | Pending |
+| TBD        | TBD     | `feature_shipment_tracking`    | Fulfillment     | Pending |
+| TBD        | TBD     | `feature_email_notifications`  | Notifications   | Pending |
 
 ---
 
 ## 17. Non-Functional Requirements (NFRs)
 
-| Metric     | ID       | Target    | Tool     |
-| ---------- | -------- | --------- | -------- |
-| **Page Load Time (P95)** | NFR-001 | <2s | Lighthouse + OTEL |
-| **API Response Time (P95)** | NFR-002 | <300ms | OTEL |
-| **Mobile Lighthouse Score** | NFR-003 | >90 | Lighthouse |
-| **Uptime** | NFR-004 | 99.9% | Cloud Monitoring |
-| **Concurrent Users** | NFR-005 | 10,000+ | Firebase Quotas |
-| **Database Read Latency (P95)** | NFR-006 | <50ms | Firestore Metrics |
-| **Database Write Latency (P95)** | NFR-007 | <100ms | Firestore Metrics |
-| **Cart Persistence** | NFR-008 | 30 days | Session Storage |
-| **Payment Processing SLA** | NFR-009 | 99.95% | Cashfree Dashboard |
-| **Shipment Tracking Update** | NFR-010 | <1 hour | Shiprocket Webhook |
-
-**Accessibility:**
-- WCAG 2.1 Level AA compliance
-- Keyboard navigation support
-- Screen reader compatibility
-
-**Browser Support:**
-- Chrome (latest 2 versions)
-- Safari (latest 2 versions)
-- Firefox (latest 2 versions)
-- Edge (latest 2 versions)
-- Mobile Safari (iOS 14+)
-- Chrome Mobile (Android 10+)
+| Metric                   | ID      | Target                  | Tool / Validation              |
+| ------------------------ | ------- | ----------------------- | ------------------------------ |
+| **Page Load Time**       | NFR-001 | <2s (mobile 3G)         | Lighthouse, Core Web Vitals    |
+| **Time to Interactive**  | NFR-002 | <3s (mobile 3G)         | Lighthouse, Core Web Vitals    |
+| **API Response Time**    | NFR-003 | <500ms (p95)            | OpenTelemetry, Cloud Monitoring|
+| **Availability**         | NFR-004 | 99.9% uptime            | Firebase Status, Cloud Monitoring|
+| **Mobile Responsiveness**| NFR-005 | 100% features on mobile | Manual testing, Playwright     |
+| **Accessibility**        | NFR-006 | WCAG 2.1 Level AA       | axe-core, Lighthouse           |
+| **Security**             | NFR-007 | HTTPS, Auth tokens      | Firebase Auth, Security Rules  |
+| **SEO**                  | NFR-008 | Lighthouse Score >90    | Lighthouse SEO audit           |
+| **Scalability**          | NFR-009 | 10K concurrent users    | Load testing, Cloud Functions  |
+| **Data Privacy**         | NFR-010 | GDPR compliant          | Privacy policy, data handling  |
 
 ---
 
 ## 18. Observability & Analytics Integration
 
-Mandatory tooling (parameterized):
+| Component             | Tool                 | Purpose                                    |
+| --------------------- | -------------------- | ------------------------------------------ |
+| **Frontend Analytics**| Google Analytics 4   | User behavior, conversion tracking         |
+| **Error Tracking**    | OpenTelemetry        | Frontend and backend error monitoring      |
+| **Performance**       | Firebase Performance | Real-time app performance metrics          |
+| **Trace Propagation** | OpenTelemetry        | Distributed tracing across microservices   |
+| **Custom Events**     | Firestore Events     | Domain event publishing and subscription   |
+| **User Journey**      | GA4 + BigQuery       | Funnel analysis, user flow visualization   |
 
-* **Analytics:** Google Analytics 4 (GA4)
-* **Telemetry:** OpenTelemetry (OTEL)
-* **Structured Logging:** Cloud Logging with structured JSON
-* **Error Tracking:** Cloud Error Reporting
+### Key Events to Track
 
-**Implementation Requirements:**
-
-1. **Frontend Analytics (GA4):**
-   - Page views
-   - Product views
-   - Add to cart events
-   - Checkout funnel tracking
-   - Purchase events with revenue
-
-2. **Backend Telemetry (OTEL):**
-   - Distributed tracing across services
-   - Custom spans for business operations
-   - Metrics: request count, latency, error rate
-   - Resource attributes: service name, version, environment
-
-3. **Domain Events Logging:**
-   - All domain events must be logged with structured payload
-   - Include correlation IDs for tracing
-   - Log levels: INFO for success, ERROR for failures
-
-4. **Custom Metrics:**
-   - Cart abandonment rate
-   - Wishlist conversion rate
-   - Order fulfillment time
-   - Payment success rate
+- `page_view` (all pages)
+- `product_view`
+- `add_to_cart`
+- `add_to_wishlist`
+- `begin_checkout`
+- `purchase`
+- `search` (with query term)
+- `user_engagement`
 
 ---
 
 ## 19. Feature Flags Policy (Mandatory)
 
-### Naming Convention (Enforced)
+All features **must** be deployed behind feature flags using Firebase Remote Config.
+
+### Flag Naming Convention
 
 ```
-feature_fe_[feature_issue]_fl_[flag_issue]_[context]_enabled
+feature_<context>_<feature_name>
 ```
 
-**Example:**
-```
-feature_fe_123_fl_456_catalog_enabled
-```
+Examples:
+- `feature_identity_user_auth`
+- `feature_catalog_product_search`
+- `feature_orders_checkout_payment`
 
-### Lifecycle
+### Flag Lifecycle
 
-1. **Creation:** Flag created with feature issue, default = disabled
-2. **Development:** Flag checked in code before feature execution
-3. **Testing:** Flag enabled in dev/staging environments
-4. **Rollout:** Progressive rollout (0% → 5% → 25% → 50% → 100%)
-5. **Validation:** Monitor metrics at each rollout stage
-6. **Cleanup:** Flag removed after 100% rollout for 7+ days with stable metrics
+1. **Development**: Flag = `false` (off by default)
+2. **Internal Testing**: Flag = `true` for dev environment
+3. **Beta Rollout**: Flag = `true` for 10% of users
+4. **General Availability**: Flag = `true` for 100% of users
+5. **Deprecation**: Flag removed after 2 release cycles
 
-### Tool
+### Flag Configuration
 
-**Firebase Remote Config** for feature flags
-
-**Requirements:**
-- All features must be behind flags
-- Flags must be parameterized (boolean, string, JSON)
-- Rollout percentage controls required
-- Flag status must be tracked in Traceability Matrix
+All flags must define:
+- Default value (boolean)
+- Targeting rules (user segments, percentage rollouts)
+- Expiration date (for temporary flags)
 
 ---
 
@@ -500,214 +466,158 @@ feature_fe_123_fl_456_catalog_enabled
 ### Authentication & Authorization
 
 - **Firebase Authentication** for user identity
-- Email/password authentication only (v1.0)
-- Password requirements: 8+ characters, 1 uppercase, 1 number
-- No social login in initial release
+- **JWT tokens** for API authorization
+- **Security Rules** for Firestore and Storage
+- **HTTPS only** for all communications
 
 ### Data Protection
 
-- **PII Handling:**
-  - Email, name, phone, addresses stored in Firestore
-  - Payment details NOT stored (Cashfree handles)
-  - HTTPS only for all traffic
-  - Firestore Security Rules enforce user-level access
+- **PII Handling**: Minimal data collection, encrypted at rest
+- **GDPR Compliance**: Right to access, right to be forgotten
+- **Payment Security**: PCI-DSS compliant via Cashfree
+- **Session Management**: Secure cookies, token expiration
 
-- **GDPR Compliance:**
-  - User data deletion on request
-  - Data export capability
-  - Privacy policy acceptance required
-  - Cookie consent for analytics
+### Security Testing
 
-### Payment Security
-
-- **PCI DSS Compliance:**
-  - Cashfree PCI-compliant gateway
-  - No credit card data stored in our systems
-  - Tokenized payment methods only
-
-### API Security
-
-- **GraphQL Security:**
-  - Authentication required for mutations (except registration)
-  - Query depth limiting (max 5 levels)
-  - Query complexity analysis
-  - Rate limiting per user/IP
-
-### Firestore Security Rules
-
-```
-- Users can read their own data only
-- Users can write their own cart, wishlist, orders
-- Product catalog is public (read-only)
-- Admin roles for catalog write operations
-```
+- **Dependency Scanning**: Automated via GitHub Actions
+- **Secret Management**: Environment variables via Firebase config
+- **OWASP Top 10**: Regular security audits
+- **Rate Limiting**: API throttling via Cloud Functions
 
 ---
 
 ## 21. Risks / Assumptions / Constraints
 
-| Type | Description | Mitigation |
-| ---- | ----------- | ---------- |
-| **Risk** | Cashfree payment gateway downtime impacts order completion | Implement retry logic, provide clear error messaging, monitor uptime SLA |
-| **Risk** | Shiprocket carrier delays cause customer dissatisfaction | Set realistic delivery expectations, provide tracking links, send proactive updates |
-| **Risk** | Firestore scaling limits with high traffic | Design efficient queries, implement caching, monitor quotas, plan for sharding |
-| **Risk** | Firebase Authentication outage prevents login/registration | Firebase has 99.95% uptime SLA; implement graceful degradation for browse-only mode |
-| **Risk** | Product images storage costs escalate | Use optimized image formats (WebP), implement CDN caching, set retention policies |
-| **Assumption** | Users have modern browsers supporting Web Components | Validated by target persona demographics; provide fallback for unsupported browsers |
-| **Assumption** | Cashfree supports required payment methods in target region | Validated during technology selection |
-| **Assumption** | Users trust Firebase for authentication | Firebase widely adopted; provide clear privacy policy |
-| **Assumption** | Mobile-first design meets desktop user needs | Responsive design principles ensure desktop experience |
-| **Constraint** | Firebase Cloud Functions 2nd gen cold start latency | Mitigate with min instances for critical functions, optimize bundle size |
-| **Constraint** | Firestore query limitations (composite indexes required) | Plan indexes in advance, test queries in emulator |
-| **Constraint** | GraphQL Mesh overhead adds latency | Benchmark federation performance, optimize subgraph response times |
-| **Constraint** | Firebase Storage has egress costs | Implement CDN, optimize image sizes, monitor usage |
+### Risks
+
+| Risk                              | Impact | Likelihood | Mitigation                                    |
+| --------------------------------- | ------ | ---------- | --------------------------------------------- |
+| Payment gateway downtime          | High   | Low        | Implement retry logic, user notifications     |
+| Firebase cost overruns            | Medium | Medium     | Set budget alerts, optimize queries           |
+| Poor mobile performance           | High   | Medium     | Implement lazy loading, optimize assets       |
+| Inventory sync issues             | Medium | Low        | Build reconciliation process, monitoring      |
+| Cart abandonment email spam       | Low    | Medium     | Implement cool-down period, unsubscribe       |
+
+### Assumptions
+
+1. **User Base**: Targeting English-speaking markets initially (US, UK, CA, AU)
+2. **Device Distribution**: 70% mobile, 30% desktop traffic expected
+3. **Payment Methods**: Cashfree supports required payment types (cards, UPI, wallets)
+4. **Shipping**: Shiprocket covers target geographies and delivery times
+5. **Compliance**: No special regulatory requirements beyond GDPR and PCI-DSS
+6. **Infrastructure**: Firebase services (Firestore, Functions, Auth, Storage) meet scale requirements
+7. **Team Skills**: Engineering team familiar with TypeScript, Lit, GraphQL, DDD patterns
+
+### Constraints
+
+1. **Budget**: Firebase free tier limitations require cost optimization
+2. **Timeline**: MVP launch target within 6 months
+3. **Team Size**: Small team requires leveraging managed services
+4. **Technical Debt**: No existing codebase to migrate from (greenfield)
+5. **Third-Party Dependencies**: Limited to Firebase, Cashfree, Shiprocket integrations
+6. **Browser Support**: Latest 2 versions of Chrome, Safari, Firefox, Edge only
+7. **Mobile OS**: iOS 14+, Android 10+
 
 ---
 
 ## 22. Out of Scope
 
-The following are **explicitly excluded** from the initial release:
+The following features are **explicitly excluded** from the initial release:
 
-### Authentication
-- Social login (Google, Facebook, Apple)
-- Multi-factor authentication (MFA)
-- Account recovery via SMS
+1. **Loyalty Programs**: Points, rewards, referral programs
+2. **Social Features**: User reviews, ratings, community forums
+3. **Subscription Model**: Auto-replenishment, subscription boxes
+4. **Multi-language Support**: Only English in v1
+5. **Multi-currency**: Only USD initially
+6. **B2B Features**: Wholesale pricing, bulk orders
+7. **Advanced Personalization**: ML-based recommendations
+8. **Live Chat Support**: Customer service chat widget
+9. **Gift Cards**: Digital gift card purchases and redemption
+10. **Product Bundles**: Multi-product promotional bundles
+11. **Affiliate Program**: Partner/influencer tracking
+12. **Mobile Apps**: Native iOS/Android apps (PWA only)
+13. **Video Content**: Product videos, tutorials
+14. **Virtual Try-On**: AR/VR beauty try-on features
+15. **Inventory Management**: Admin inventory control panel
 
-### Product Features
-- Product reviews and ratings
-- Product recommendations engine
-- Virtual try-on or AR features
-- Subscription boxes or auto-replenishment
-- Gift cards
-- Advanced search (full-text, filters beyond basic category/name)
-- Multi-level category hierarchies
-
-### Payments
-- Multiple payment methods (wallet, UPI, net banking) — Cashfree default only
-- Installment payment plans
-- Store credit or loyalty points
-
-### Fulfillment
-- International shipping
-- Same-day delivery
-- In-store pickup
-- Return and refund workflow (manual process initially)
-- Partial shipments (all items ship together)
-- Multi-address order splitting
-
-### User Features
-- User-generated content (photos, tutorials)
-- Social sharing
-- Referral program
-- Loyalty program
-- Wishlist sharing or public wishlists
-- Order modification after creation
-
-### Admin Features
-- Admin dashboard for catalog management (manual Firebase Console)
-- Inventory management system
-- Order management dashboard
-- Analytics dashboard
-
-### Marketing
-- Email marketing campaigns
-- Push notifications
-- SMS notifications
-- Personalization engine
-
-### Platform
-- Mobile native apps (iOS/Android)
-- Progressive Web App (PWA) features (offline mode, install prompt)
+These may be considered for future releases based on user feedback and business metrics.
 
 ---
 
 ## 23. Rollout & Progressive Delivery
 
-### Phase 1: Internal Alpha (Week 1-2)
+### Phase 1: MVP Launch (Months 1-3)
 
-**Audience:** Internal team members (5-10 users)
+**Goal**: Establish core purchase flow
 
-**Scope:** Full feature set with all flags enabled
+- User authentication (email/password)
+- Product catalog (browse, filter, search)
+- Shopping cart (add, update, remove)
+- Checkout & payment (Cashfree integration)
+- Order confirmation emails
+- Basic order history
 
-**Goals:**
-- Validate end-to-end flows
-- Test payment integration with test accounts
-- Verify order fulfillment webhook integration
-- Identify critical bugs
+**Success Criteria**: 100 completed orders, <60% cart abandonment
 
-**Exit Criteria:**
-- Zero P0 bugs
-- All critical paths tested
-- Performance benchmarks met
+### Phase 2: Retention Features (Months 4-5)
 
-### Phase 2: Limited Beta (Week 3-4)
+**Goal**: Drive repeat purchases
 
-**Audience:** Invited early adopters (50-100 users)
+- Wishlist functionality
+- Enhanced order tracking (Shiprocket integration)
+- Shipment status notifications
+- Multiple shipping addresses
 
-**Scope:** Full feature set with 100% rollout for beta users
+**Success Criteria**: 25% repeat purchase rate, <100 support tickets/month
 
-**Goals:**
-- Gather user feedback on UX
-- Validate real payment transactions
-- Monitor performance under moderate load
-- Test customer support processes
+### Phase 3: Discovery Enhancement (Month 6)
 
-**Exit Criteria:**
-- <5% checkout failure rate
-- NPS >40 from beta users
-- No P0 or P1 bugs
-- Fulfillment SLA met (48 hours)
+**Goal**: Improve product discovery
 
-### Phase 3: General Availability (Week 5+)
+- Enhanced search (autocomplete, filters)
+- Category navigation improvements
+- Product recommendations (basic algorithm)
+- Mobile performance optimization
 
-**Audience:** Public launch
+**Success Criteria**: >60% product discovery rate, <2s page load time
 
-**Rollout Strategy:**
-- Week 5: 10% of traffic
-- Week 6: 25% of traffic
-- Week 7: 50% of traffic
-- Week 8: 100% of traffic
+### Feature Flag Strategy
 
-**Monitoring:**
-- Real-time KPI dashboard
-- Error rate monitoring
-- Payment gateway status
-- Shiprocket webhook health
-- User support ticket volume
+Each phase will use progressive rollout:
+1. Internal testing (dev environment)
+2. Beta group (5% of users)
+3. Limited release (25% of users)
+4. General availability (100% of users)
 
-**Rollback Criteria:**
+Rollback triggers:
 - Error rate >5%
+- Performance degradation >20%
 - Payment failure rate >10%
-- Page load P95 >5s
-- Critical security vulnerability
 
 ---
 
 ## 24. Appendix
 
-### References
+### Related Documents
 
-- **Technology Stack:** See [README.md](../../README.md)
-- **DDD Patterns:** Evans, Eric. *Domain-Driven Design: Tackling Complexity in the Heart of Software*
-- **CQRS:** Fowler, Martin. [CQRS](https://martinfowler.com/bliki/CQRS.html)
-- **Firebase Documentation:** https://firebase.google.com/docs
-- **GraphQL Mesh:** https://the-guild.dev/graphql/mesh
-- **Cashfree API:** https://docs.cashfree.com/
-- **Shiprocket API:** https://apidocs.shiprocket.in/
+- `docs/product/implementation-roadmap.md` — Feature sequencing and dependencies
+- `docs/features/` — Individual feature blueprints (to be generated)
+- `docs/diagrams/` — Technical architecture diagrams
 
-### Supporting Documents
+### Change Log
 
-_To be created during feature specification phase:_
+| Version | Date       | Author       | Changes                          |
+| ------- | ---------- | ------------ | -------------------------------- |
+| 1.0.0   | 2026-01-24 | Product Team | Initial PRD creation             |
 
-- Architecture decision records (ADRs)
-- API specifications
-- Database schema diagrams
-- Sequence diagrams for critical flows
-- Design system documentation
+### Approvals
 
-### Revision History
+| Role                | Name | Date | Signature |
+| ------------------- | ---- | ---- | --------- |
+| Product Owner       | TBD  | TBD  | TBD       |
+| Engineering Lead    | TBD  | TBD  | TBD       |
+| Architecture Review | TBD  | TBD  | TBD       |
 
-| Version | Date       | Author       | Changes                    |
-| ------- | ---------- | ------------ | -------------------------- |
-| 1.0.0   | 2025-12-30 | Product Team | Initial PRD creation       |
-| 1.1.0   | 2025-12-30 | Product Team | Clarifications resolved; business rules finalized |
+---
+
+**End of Document**
