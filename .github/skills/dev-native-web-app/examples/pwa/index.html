@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PWA Example</title>
+    <meta name="description" content="PWA with manifest, service worker, and offline support." />
+    <meta name="theme-color" content="#2d60f3" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+    <style>
+        :root {
+            color-scheme: light dark;
+            --bg: light-dark(#f4f2ef, #0d0e11);
+            --fg: light-dark(#1c1c1f, #eff0f4);
+            --surface: light-dark(#ffffff, #15171d);
+            --border: light-dark(#dcdad5, #2c2f36);
+            --accent: light-dark(#2d60f3, #8fb1ff);
+            --radius: 1rem;
+            --space-sm: clamp(0.6rem, 1.2cqi, 0.9rem);
+            --space-md: clamp(1rem, 2cqi, 1.6rem);
+            --space-lg: clamp(1.6rem, 3cqi, 2.4rem);
+            --text-sm: clamp(0.9rem, 2cqi, 1rem);
+            --text-md: clamp(1.1rem, 3cqi, 1.35rem);
+            --text-lg: clamp(1.6rem, 4cqi, 2rem);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--fg);
+            font-family: system-ui, sans-serif;
+            line-height: 1.5;
+            padding: var(--space-lg);
+        }
+
+        main {
+            max-inline-size: 48rem;
+            margin-inline: auto;
+            display: grid;
+            gap: var(--space-md);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: var(--text-lg);
+        }
+
+        p {
+            margin: 0;
+            font-size: var(--text-sm);
+        }
+
+        .panel {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: var(--space-md);
+            display: grid;
+            gap: var(--space-sm);
+        }
+
+        .steps {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: grid;
+            gap: var(--space-sm);
+        }
+
+        .steps li {
+            padding: var(--space-sm);
+            border-radius: 0.5rem;
+            border: 1px dashed var(--border);
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: var(--text-sm);
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        a {
+            color: var(--accent);
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1>PWA Example</h1>
+            <p>Manifest, service worker, caching strategies, and offline support.</p>
+        </header>
+
+        <section class="panel">
+            <p class="chip">✓ Offline-ready</p>
+            <ol class="steps">
+                <li>Serve this folder from localhost or HTTPS</li>
+                <li>Refresh once to let the service worker cache assets</li>
+                <li>Go offline and reload — the app still works</li>
+            </ol>
+            <p>Test offline: <a href="./offline.html">offline.html</a></p>
+        </section>
+
+        <section class="panel">
+            <p class="chip">Caching Strategies</p>
+            <ul class="steps">
+                <li><strong>HTML pages:</strong> Network First (fresh content, offline fallback)</li>
+                <li><strong>Static assets:</strong> Cache First (fast loads)</li>
+            </ul>
+        </section>
+    </main>
+
+    <script type="module">
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker.register("./sw.js")
+                    .then(() => console.log("SW registered"))
+                    .catch((err) => console.error("SW failed:", err));
+            });
+        }
+    </script>
+</body>
+
+</html>

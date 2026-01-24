@@ -1,0 +1,19 @@
+{
+    "name": "PWA Example",
+    "short_name": "PWA",
+    "description": "Progressive Web App with manifest, service worker, and offline support.",
+    "start_url": "./",
+    "scope": "./",
+    "display": "standalone",
+    "background_color": "#0d0e11",
+    "theme_color": "#2d60f3",
+    "orientation": "any",
+    "icons": [
+        {
+            "src": "icon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ]
+}

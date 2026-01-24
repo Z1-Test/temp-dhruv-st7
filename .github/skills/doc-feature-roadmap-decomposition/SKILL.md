@@ -1,6 +1,6 @@
 ---
 name: feature-roadmap-decomposition
-description: Decomposes a decision-complete PRD into a clear, minimal set of user-meaningful features with explicit dependencies, producing a roadmap-ready structure without prioritization, scheduling, or implementation detail.
+description: Converts a decision-complete PRD into a concise, roadmap-ready list of features with explicit dependencies and Markdown output including a Mermaid dependency diagram.
 ---
 
 # Feature & Roadmap Decomposition
@@ -29,6 +29,7 @@ Use this skill when a PRD has been finalized, all critical ambiguities have been
 4. **Use the output for roadmap planning**: The resulting feature list can be used directly for issue creation or planning workflows
 
 **Do not use this skill to**:
+
 - Write or modify a PRD
 - Detect ambiguity
 - Prioritize or schedule work
@@ -150,10 +151,20 @@ Dependencies should be:
 
 The output of this skill should be **Markdown content only**, suitable for direct inclusion in a roadmap draft.
 
+It MUST include a **Mermaid diagram** visualizing the high-level feature dependencies.
+
 Recommended structure:
 
 ```markdown
 # Feature Roadmap (Draft)
+
+```mermaid
+graph TD
+    A[Feature Name] --> B[Dependent Feature]
+    subgraph "Group/Epic"
+      C[Feature C]
+    end
+```
 
 - **Feature Name**
   - Description: One-line description of the outcome.
@@ -161,6 +172,7 @@ Recommended structure:
 
 - **Feature Name**
   - Description: ...
+
 ```
 
 Descriptions should be concise, neutral, and outcome-focused.

@@ -142,6 +142,9 @@ When ambiguity is detected:
 - Avoid leading language
 - Avoid implied defaults
 - Provide structured options only when they clarify the decision space
+- **Avoid granular follow-up loops**: Ask broad questions or provide open text fields for lists (e.g., "List all languages") rather than asking one by one.
+- **Blank Lines**: Always include exactly one blank line after every heading (Level 1-6).
+- **Select Prefixes**: Every question title MUST include either `(Single Select)` or `(Multi Select)` as a suffix to clarify the expected response type.
 - Prefer fewer, higher-impact questions
 
 ### Bad Question
@@ -165,13 +168,13 @@ Use the following structure:
 
 > Please review and select options or provide input for each question.
 
-## Q1: [Decision Area]
+## Q1: [Decision Area] (Single Select)
 
 - [ ] Option A: [Description]
 - [ ] Option B: [Description]
 - [ ] Other: [Please specify]
 
-## Q2: [Decision Area]
+## Q2: [Decision Area] (Multi Select)
 ...
 ```
 

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Optimized Example | Core Web Vitals</title>
+    <meta name="description"
+        content="Demonstration of performance optimization techniques for Core Web Vitals: LCP, INP, and CLS.">
+
+    <!-- Preconnect to required origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Preload critical assets -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="hero-image.jpg" as="image" fetchpriority="high">
+
+    <!-- Critical CSS inlined for faster FCP -->
+    <style>
+        /* Critical CSS - Above the fold styles */
+        :root {
+            --color-bg: #ffffff;
+            --color-text: #212529;
+            --color-primary: #1a73e8;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-bg: #121212;
+                --color-text: #e0e0e0;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+
+        /* Prevent CLS: Reserve space for hero image */
+        .hero {
+            aspect-ratio: 16 / 9;
+            max-height: 60vh;
+            overflow: hidden;
+            background-color: #e0e0e0;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Prevent CLS: Reserve space for header */
+        header {
+            height: 4rem;
+            display: flex;
+            align-items: center;
+            padding-inline: 2rem;
+        }
+    </style>
+
+    <!-- Load non-critical CSS asynchronously -->
+    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="styles.css">
+    </noscript>
+</head>
+
+<body>
+    <header>
+        <nav aria-label="Main navigation">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/products">Products</a>
+        </nav>
+    </header>
+
+    <!-- Hero Image with explicit dimensions to prevent CLS -->
+    <section class="hero">
+        <img src="hero-image.jpg" alt="Hero image showing our product in action" width="1920" height="1080"
+            fetchpriority="high" decoding="async">
+    </section>
+
+    <main>
+        <h1>Performance Optimized Page</h1>
+        <p>This page demonstrates Core Web Vitals optimization techniques.</p>
+
+        <section aria-labelledby="lcp-heading">
+            <h2 id="lcp-heading">LCP Optimization</h2>
+            <ul>
+                <li><code>fetchpriority="high"</code> on LCP image</li>
+                <li>Preload critical assets with <code>&lt;link rel="preload"&gt;</code></li>
+                <li>Preconnect to third-party origins</li>
+                <li>Critical CSS inlined in <code>&lt;head&gt;</code></li>
+                <li>Non-critical CSS loaded asynchronously</li>
+            </ul>
+        </section>
+
+        <section aria-labelledby="cls-heading">
+            <h2 id="cls-heading">CLS Prevention</h2>
+            <ul>
+                <li>Explicit <code>width</code> and <code>height</code> on images</li>
+                <li><code>aspect-ratio</code> CSS for responsive containers</li>
+                <li>Reserved space for dynamic content</li>
+                <li>Font loading with <code>font-display: optional</code></li>
+            </ul>
+        </section>
+
+        <section aria-labelledby="inp-heading">
+            <h2 id="inp-heading">INP Optimization</h2>
+            <ul>
+                <li>Avoid long tasks (break up JavaScript)</li>
+                <li>Use <code>requestIdleCallback</code> for non-critical work</li>
+                <li>Defer non-essential JavaScript</li>
+                <li>Use CSS for interactions when possible</li>
+            </ul>
+        </section>
+
+        <!-- Lazy loaded images below the fold -->
+        <section aria-labelledby="gallery-heading">
+            <h2 id="gallery-heading">Image Gallery</h2>
+            <div class="gallery">
+                <img src="gallery-1.jpg" alt="Gallery image 1" width="400" height="300" loading="lazy" decoding="async">
+                <img src="gallery-2.jpg" alt="Gallery image 2" width="400" height="300" loading="lazy" decoding="async">
+                <img src="gallery-3.jpg" alt="Gallery image 3" width="400" height="300" loading="lazy" decoding="async">
+            </div>
+        </section>
+    </main>
+
+    <!-- Defer non-critical JavaScript -->
+    <script src="app.js" defer></script>
+
+    <!-- Load analytics after page is interactive -->
+    <script>
+        // Use requestIdleCallback for non-critical work
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(() => {
+                // Load analytics or other non-critical scripts
+                console.log('Loading non-critical scripts during idle time');
+            });
+        }
+    </script>
+</body>
+
+</html>

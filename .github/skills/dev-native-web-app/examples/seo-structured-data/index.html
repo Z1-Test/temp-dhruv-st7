@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO Meta Tags -->
+    <title>SEO Structured Data Example | Product Page</title>
+    <meta name="title" content="SEO Structured Data Example | Product Page">
+    <meta name="description"
+        content="Learn how to implement JSON-LD structured data, Open Graph, and Twitter Cards for optimal search engine visibility and social sharing.">
+    <meta name="keywords" content="SEO, structured data, JSON-LD, Schema.org, Open Graph, Twitter Cards">
+    <meta name="author" content="Your Company">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://example.com/products/example-product">
+
+    <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+    <meta property="og:type" content="product">
+    <meta property="og:url" content="https://example.com/products/example-product">
+    <meta property="og:title" content="Example Product - High Quality Widget">
+    <meta property="og:description"
+        content="This high-quality widget features advanced functionality and elegant design. Perfect for developers building modern applications.">
+    <meta property="og:image" content="https://example.com/images/product-og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Example Product photo showing the widget in use">
+    <meta property="og:site_name" content="Example Store">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@examplestore">
+    <meta name="twitter:creator" content="@examplestore">
+    <meta name="twitter:title" content="Example Product - High Quality Widget">
+    <meta name="twitter:description"
+        content="This high-quality widget features advanced functionality and elegant design.">
+    <meta name="twitter:image" content="https://example.com/images/product-twitter.jpg">
+    <meta name="twitter:image:alt" content="Example Product photo">
+
+    <!-- JSON-LD Structured Data: Product -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Example Product",
+    "description": "This high-quality widget features advanced functionality and elegant design. Perfect for developers building modern applications.",
+    "image": [
+      "https://example.com/images/product-1.jpg",
+      "https://example.com/images/product-2.jpg"
+    ],
+    "sku": "WIDGET-001",
+    "mpn": "WGT001",
+    "brand": {
+      "@type": "Brand",
+      "name": "Example Brand"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://example.com/products/example-product",
+      "priceCurrency": "USD",
+      "price": "49.99",
+      "priceValidUntil": "2025-12-31",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "Example Store"
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.5",
+      "reviewCount": "128"
+    },
+    "review": {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Jane Developer"
+      },
+      "reviewBody": "Excellent product! Works exactly as described and the build quality is outstanding."
+    }
+  }
+  </script>
+
+    <!-- JSON-LD: Breadcrumb -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://example.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Products",
+        "item": "https://example.com/products/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Example Product",
+        "item": "https://example.com/products/example-product"
+      }
+    ]
+  }
+  </script>
+
+    <!-- JSON-LD: Organization (for sitelinks search box) -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Example Store",
+    "url": "https://example.com",
+    "logo": "https://example.com/images/logo.png",
+    "sameAs": [
+      "https://twitter.com/examplestore",
+      "https://www.linkedin.com/company/examplestore",
+      "https://github.com/examplestore"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-555-123-4567",
+      "contactType": "customer service",
+      "availableLanguage": ["English"]
+    }
+  }
+  </script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav aria-label="Breadcrumb">
+        <ol>
+            <li><a href="/">Home</a></li>
+            <li><a href="/products/">Products</a></li>
+            <li aria-current="page">Example Product</li>
+        </ol>
+    </nav>
+
+    <main>
+        <article>
+            <h1>Example Product</h1>
+
+            <figure>
+                <img src="https://example.com/images/product-1.jpg"
+                    alt="Example Product - front view showing the sleek design" width="800" height="600" loading="eager"
+                    fetchpriority="high">
+                <figcaption>Example Product - High Quality Widget</figcaption>
+            </figure>
+
+            <section aria-labelledby="description-heading">
+                <h2 id="description-heading">Description</h2>
+                <p>This high-quality widget features advanced functionality and elegant design. Perfect for developers
+                    building modern applications.</p>
+            </section>
+
+            <section aria-labelledby="pricing-heading">
+                <h2 id="pricing-heading">Pricing</h2>
+                <p><strong>$49.99</strong> <span>In Stock</span></p>
+            </section>
+
+            <section aria-labelledby="reviews-heading">
+                <h2 id="reviews-heading">Customer Reviews</h2>
+                <p>4.5 out of 5 stars (128 reviews)</p>
+            </section>
+        </article>
+    </main>
+</body>
+
+</html>

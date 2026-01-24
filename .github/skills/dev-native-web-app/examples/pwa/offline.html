@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Offline - PWA Example</title>
+    <meta name="theme-color" content="#2d60f3" />
+    <style>
+        :root {
+            color-scheme: light dark;
+            --bg: light-dark(#f4f2ef, #0d0e11);
+            --fg: light-dark(#1c1c1f, #eff0f4);
+            --accent: light-dark(#2d60f3, #8fb1ff);
+            --space-md: clamp(1rem, 2cqi, 1.6rem);
+            --text-md: clamp(1.1rem, 3cqi, 1.35rem);
+        }
+
+        body {
+            margin: 0;
+            min-block-size: 100dvh;
+            display: grid;
+            place-items: center;
+            background: var(--bg);
+            color: var(--fg);
+            font-family: system-ui, sans-serif;
+            line-height: 1.5;
+        }
+
+        .card {
+            max-inline-size: 28rem;
+            padding: var(--space-md);
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0 0 var(--space-md);
+            font-size: var(--text-md);
+        }
+
+        p {
+            margin: 0 0 0.5rem;
+        }
+
+        a {
+            color: var(--accent);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <h1>You're offline</h1>
+        <p>Reconnect and reload to sync the latest content.</p>
+        <p><a href="./index.html">Back to home</a></p>
+    </div>
+</body>
+
+</html>
